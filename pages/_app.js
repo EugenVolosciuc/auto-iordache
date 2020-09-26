@@ -6,7 +6,7 @@ import { AlertTemplate } from '../components/ui'
 
 import '../styles/globals.css'
 import '../styles/tailwind.css'
-import 'react-image-lightbox/style.css';
+import 'react-image-lightbox/style.css'
 
 function MyApp({ Component, pageProps, router }) {
 	return <>
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps, router }) {
 			>
 				<Component {...pageProps} />
 				<div id="fb-root"></div>
-				<div class="fb-customerchat"
+				<div className="fb-customerchat"
 					attribution="install_email"
 					page_id="545829935899408"
 					theme_color="#2f6d91"
