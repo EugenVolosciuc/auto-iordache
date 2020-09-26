@@ -7,9 +7,8 @@ import { isNil } from 'lodash'
 import BaseLayout from '../../components/layouts/BaseLayout.component'
 import BlogPostCard from '../../components/cards/BlogPostCard.component'
 import { SectionTitle, Button } from '../../components/ui'
-import next from 'next'
 
-const itemsPerPage = 3
+const itemsPerPage = 10
 
 const Blog = ({ posts }) => {
     const startIndex = parseInt(posts.openSearch$startIndex.$t, 10)
@@ -21,7 +20,7 @@ const Blog = ({ posts }) => {
     return (
         <div>
             <BaseLayout>
-                <section className="mt-4 px-4 md:px-24">
+                <section className="mt-8 px-4 md:px-24">
                     <SectionTitle title="Blog" />
                 </section>
                 {
@@ -30,7 +29,7 @@ const Blog = ({ posts }) => {
                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                             {posts.entry.map(post => <Fragment key={post.id.$t}><BlogPostCard blogPost={post} /></Fragment>)}
                         </div>
-                        <div className="w-full flex justify-end">
+                        <div className="w-full flex justify-end mb-8">
                             {prevPageIndex > 0 &&
                                 <Button btnType="link" className="mr-4">
                                     <Link
@@ -71,8 +70,6 @@ export async function getServerSideProps({ query }) {
         // : `https://www.googleapis.com/blogger/v3/blogs/${process.env.BLOG_ID}/posts?maxResults=2&key=${process.env.BLOGGER_API_KEY}`
 
         const response = await axios.get(requestURL)
-
-        console.log("response", response)
 
         return {
             props: {

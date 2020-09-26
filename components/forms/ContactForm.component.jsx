@@ -15,7 +15,7 @@ const ContactForm = ({ showHeading = true }) => {
 
     const onSubmit = async data => {
         try {
-            await axios.post('https://submit-form.com/tAHfsRidsAqwVoZA45-b-', data)
+            await axios.post(`https://submit-form.com/${FORMSPARK_FORM_ID}`, data)
             alert.success('Multumim, va vom contacta in curand')
             reset(data)
         } catch (error) {
@@ -25,9 +25,10 @@ const ContactForm = ({ showHeading = true }) => {
     }
 
     return (
-        <div className={`p-8 ${showHeading ? '' : 'pt-1'} bg-secondary z-10 rounded-lg`}>
-            {showHeading && <h3 className="text-xl font-medium" style={{ maxWidth: 320 }}>Lasă-ne datele de contact și revenim noi cu un apel</h3>}
+        <div className={`p-8 ${showHeading ? '' : 'pt-1'} bg-white z-10 rounded-lg w-full md:w-auto`}>
+            {showHeading && <h3 className="text-xl font-medium mx-auto" style={{ maxWidth: 320 }}>Lasă-ne datele de contact și revenim noi cu un apel</h3>}
             <form
+                className="mx-auto"
                 onSubmit={handleSubmit(onSubmit)}
                 style={{ maxWidth: 320 }}>
                 <Input
@@ -36,13 +37,6 @@ const ContactForm = ({ showHeading = true }) => {
                     label="Nume"
                     inputref={register({ required: 'Numele este obligatoriu' })}
                     error={errors.nume}
-                />
-                <Input
-                    labelClassName={!isEmpty(watch('email')) ? 'moved-label' : ''}
-                    name="email"
-                    label="Adresa de e-mail"
-                    inputref={register({ required: 'Email-ul este obligatoriu' })}
-                    error={errors.email}
                 />
                 <Input
                     labelClassName={!isEmpty(watch('telefon')) ? 'moved-label' : ''}
@@ -58,9 +52,15 @@ const ContactForm = ({ showHeading = true }) => {
                     error={errors.telefon}
                 />
                 <Input
+                    labelClassName={!isEmpty(watch('email')) ? 'moved-label' : ''}
+                    name="email"
+                    label="Adresa de e-mail (optional)"
+                    inputref={register}
+                />
+                <Input
                     labelClassName={!isEmpty(watch('comentariu')) ? 'moved-label' : ''}
                     name="comentariu"
-                    label="Comentariu"
+                    label="Comentariu (optional)"
                     inputref={register}
                 />
                 <Button className="w-full" htmlType="submit">

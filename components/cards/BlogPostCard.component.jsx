@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
+import { PulseOnTap } from '../ui'
+
 const maxTitleLength = 30
 const maxParagraphLength = 120
 
@@ -19,35 +21,44 @@ const BlogPostCard = ({ blogPost }) => {
     const postID = blogPost.id.$t.split('.post-')[1]
 
     return (
-        <Link href="/blog/[id]" as={`/blog/${postID}`}>
-            <div className="blog-post-card border-l-8 border-secondary px-4 flex flex-col md:flex-row mb-8 cursor-pointer">
-                <img
-                    className="md:h-full"
-                    src={imgSrc ? imgSrc[1] : '/assets/images/cars/vw_golf.jpg'}
-                    alt={`Blog post image - ${postID}`}
-                />
-                <div className="flex flex-col justify-center mt-4 md:mt-0 md:ml-8">
-                    <div className="flex flex-col mb-4">
-                        <h5 className="text-4xl font-medium">
-                            {blogPost.title 
-                                ? blogPost.title.$t.length > maxTitleLength
-                                    ? blogPost.title.$t.slice(0, maxTitleLength - 1) + "…"
-                                    : blogPost.title.$t
-                                : 'AutoPost'
-                            }
-                        </h5>
-                        <span className="text-gray-600 text-sm">{`${day}/${month}/${year}`}</span>
+        <PulseOnTap smallerScale>
+            <Link href="/blog/[id]" as={`/blog/${postID}`}>
+                <div className="blog-post-card border-l-8 border-secondary px-4 flex flex-col md:flex-row mb-10 cursor-pointer">
+                    {
+                        imgSrc
+                            ? <img
+                                className="md:h-full"
+                                src={imgSrc[1]}
+                                alt={`Blog post image - ${postID}`}
+                            />
+                            : <div className="p-4 flex items-center placeholder-container">
+                                <img src="/assets/images/logo_auto_iordache_blue.png" alt="Auto Iordache Logo"/>
+                            </div>
+                    }
+                    
+                    <div className="flex flex-col justify-center mt-4 md:mt-0 md:ml-8">
+                        <div className="flex flex-col mb-4">
+                            <h5 className="text-4xl font-medium">
+                                {blogPost.title
+                                    ? blogPost.title.$t.length > maxTitleLength
+                                        ? blogPost.title.$t.slice(0, maxTitleLength - 1) + "…"
+                                        : blogPost.title.$t
+                                    : 'AutoPost'
+                                }
+                            </h5>
+                            <span className="text-gray-600 text-sm">{`${day}/${month}/${year}`}</span>
+                        </div>
+                        <span
+                            dangerouslySetInnerHTML={{
+                                __html: firstParagraph.length > maxParagraphLength
+                                    ? firstParagraph.slice(0, maxParagraphLength - 1) + "…"
+                                    : firstParagraph
+                            }}
+                        />
                     </div>
-                    <span
-                        dangerouslySetInnerHTML={{
-                            __html: firstParagraph.length > maxParagraphLength
-                                ? firstParagraph.slice(0, maxParagraphLength - 1) + "…"
-                                : firstParagraph
-                        }}
-                    />
                 </div>
-            </div>
-        </Link>
+            </Link>
+        </PulseOnTap>
     )
 }
 

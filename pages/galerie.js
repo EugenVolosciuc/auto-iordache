@@ -9,7 +9,7 @@ const Galerie = () => {
 	return (
 		<div>
 			<BaseLayout>
-				<section className="px-4 md:px-24">
+				<section className="mt-8 px-4 md:px-24">
 					<SectionTitle title="Categoria A" />
 					<div className="w-full flex">
 						<div className="mr-4 w-1/2">

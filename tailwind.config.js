@@ -4,10 +4,11 @@ module.exports = {
 		extend: {
 			colors: {
 				'text-color': '#131313',
-				'main': '#485BFF',
-				'secondary': '#E5E8FF',
-				'accent': '#AB3DFF'
-
+				// 'main': '#485BFF',
+				'main': '#2F6D91',
+				// 'secondary': '#E5E8FF',
+				'secondary': '#87BCDE',
+				// 'accent': '#4FB286',
 			}
 		}
 	},

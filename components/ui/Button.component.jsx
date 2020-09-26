@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Button = ({ btnType = 'primary', htmlType = "button", children, className = '', style = {},  onClick = () => {}}) => {
+import { PulseOnTap } from '.'
+
+const Button = ({ btnType = 'primary', htmlType = "button", children, className = '', containerClassName = '', style = {}, onClick = () => { } }) => {
     const getBtnTypeStyling = () => {
         switch (btnType) {
             case 'primary':
@@ -13,13 +15,14 @@ const Button = ({ btnType = 'primary', htmlType = "button", children, className 
     }
 
     return (
-        <button 
-            style={style}
-            onClick={onClick}
-            className={`font-medium text-xl rounded-full ${getBtnTypeStyling()} ${className}`}
-            type={htmlType}>
-            {children}
-        </button>
+        <PulseOnTap style={style} className={containerClassName}>
+            <button
+                onClick={onClick}
+                className={`font-medium text-xl rounded-lg ${getBtnTypeStyling()} ${className}`}
+                type={htmlType}>
+                {children}
+            </button>
+        </PulseOnTap>
     )
 }
 

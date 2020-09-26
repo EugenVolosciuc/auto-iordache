@@ -1,7 +1,9 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
 import { isNil } from 'lodash'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from "react-intersection-observer" // https://codesandbox.io/s/framer-motion-animate-in-view-gqcc8?file=/src/index.js:230-299
 
 import BaseLayout from '../components/layouts/BaseLayout.component'
 import ContactForm from '../components/forms/ContactForm.component'
@@ -10,33 +12,69 @@ import BlogPostCard from '../components/cards/BlogPostCard.component'
 import { SectionTitle, Button } from '../components/ui'
 import categories from '../utils/categories'
 
-const ExternalResource = ({ href, label }) => <a className="text-main" target="_blank" href={href}>{label}</a>
+const containerVariantsForStaggering = {
+    show: {
+        transition: {
+            staggerChildren: 0.05
+        }
+    }
+}
+
+const heroAreaTextVariants = {
+    hidden: { x: -200 },
+    show: { x: 0 }
+}
+
+const categoryVariants = {
+    show: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -100 }
+}
+
+const ExternalResource = ({ href, label }) => <a className="text-main" target="_blank" rel="noopener" href={href}>{label}</a>
 
 const Acasa = ({ posts }) => {
+    const controls = useAnimation()
+    const [ref, inView] = useInView()
+
+    useEffect(() => {
+        if (inView) {
+          controls.start("show");
+        }
+      }, [controls, inView]);
+
     return (
         <BaseLayout>
             <section className="w-full">
                 <div className="flex flex-col md:flex-row w-full relative hero-area justify-center">
                     <div className="overlay z-0" />
-                    <div className="flex flex-col lg:w-1/2 justify-center items-center text-center md:text-left md:items-start text-white z-10 px-8 md:px-0 md:pl-20 lg:pl-48 mb-8 md:mb-0">
-                        <h3 className="text-4xl md:text-6xl font-black mb-4 tracking-wide">AUTO IORDACHE</h3>
-                        <h4 className="text-2xl md:text-4xl font-thin uppercase tracking-wide">Soferi buni pe strazile Iasului din 1992</h4>
-                    </div>
-                    <div className="flex flex-col lg:w-1/2 justify-center items-center">
+                    <motion.div initial="hidden" animate="show" variants={containerVariantsForStaggering} className="flex flex-col lg:w-1/2 justify-center items-center text-center md:text-left md:items-start text-white z-10 px-8 md:px-0 md:pl-20 lg:pl-48 mb-8 md:mb-0">
+                        <motion.h3 variants={heroAreaTextVariants} className="text-4xl md:text-6xl font-black mb-4 tracking-wide">AUTO IORDACHE</motion.h3>
+                        <motion.h4 variants={heroAreaTextVariants} className="text-2xl md:text-4xl font-thin uppercase tracking-wide">Soferi buni pe strazile Iasului din 1992</motion.h4>
+                    </motion.div>
+                    <motion.div initial={{ x: 200 }} animate={{ x: 0 }} className="flex flex-col lg:w-1/2 justify-center items-center px-4 md:px-0">
                         <ContactForm />
-                    </div>
+                    </motion.div>
                 </div>
             </section>
             <section className="mt-16 px-4 md:px-24">
-                <p className="text-center text-xl xl:px-64 pb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque temporibus exercitationem quidem at unde, in cum placeat ut consequatur omnis. Sit itaque veniam nisi, incidunt sapiente ullam, impedit neque repellat totam soluta praesentium provident eveniet. Voluptates quod maiores, repellat, labore ea officia, nobis necessitatibus iusto facilis iure unde aperiam possimus.</p>
+                <p className="text-center text-xl xl:px-64">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque temporibus exercitationem quidem at unde, in cum placeat ut consequatur omnis. Sit itaque veniam nisi, incidunt sapiente ullam, impedit neque repellat totam soluta praesentium provident eveniet. Voluptates quod maiores, repellat, labore ea officia, nobis necessitatibus iusto facilis iure unde aperiam possimus.</p>
             </section>
             <section className="mt-16 px-4 md:px-24">
                 <SectionTitle title="categorii" />
                 <div className="w-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {categories.map(category => <Fragment key={category.letter}><CategoryCard category={category} /></Fragment>)}
+                        {categories.map(category => (
+                            <motion.div 
+                                ref={ref}
+                                animate={controls}
+                                initial="hidden"
+                                variants={categoryVariants}
+                                key={category.letter}>
+                                <CategoryCard category={category} />
+                            </motion.div>
+                        ))}
                         <span className="flex items-center">
-                            <Button btnType="link" className="mx-auto md:mx-0 mb-4 md:mb-8"><Link href="/galerie"><a>Vezi toate masinile &gt;</a></Link></Button>
+                            <Button btnType="link" containerClassName="mx-auto md:mx-0" className="mb-4 md:mb-8"><Link href="/galerie"><a>Vezi toate masinile &gt;</a></Link></Button>
                         </span>
                     </div>
                 </div>

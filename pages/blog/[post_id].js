@@ -15,6 +15,15 @@ const PostNotFound = () => {
 }
 
 const BlogPost = ({ post }) => {
+    const publishDate = new Date(post.published)
+
+    console.log(post)
+    console.log(publishDate)
+
+    const year = new Intl.DateTimeFormat('ro', { year: 'numeric' }).format(publishDate)
+    const month = new Intl.DateTimeFormat('ro', { month: '2-digit' }).format(publishDate)
+    const day = new Intl.DateTimeFormat('ro', { day: '2-digit' }).format(publishDate)
+
     return (
         <div>
             <BaseLayout>
@@ -23,7 +32,8 @@ const BlogPost = ({ post }) => {
                         {
                             !!post
                                 ? <>
-                                    <SectionTitle title={post.title || 'AutoPost'} />
+                                    <SectionTitle title={post.title || 'AutoPost'} subtitle={`${day}/${month}/${year}`} />
+                                    <span className="text-gray-600 text-sm">{`${day}/${month}/${year}`}</span>
                                     <div className="w-full" dangerouslySetInnerHTML={{ __html: post.content }} />
                                     <div className="w-full flex justify-end mt-4">
                                         <Button btnType="link" style={{ fontSize: '1rem' }}><Link href="/blog" as="/blog"><a>Vezi alte postari</a></Link></Button>
