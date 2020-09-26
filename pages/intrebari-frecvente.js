@@ -43,7 +43,7 @@ const IntrebariFrecvente = () => {
 	const [openQuestion, setOpenQuestion] = useState(null)
 	return (
 		<div>
-			<BaseLayout title="Intrebari frecvente | Auto Iordache">
+			<BaseLayout title="Intrebari Frecvente | Auto Iordache">
 				<section className="px-4 my-8 md:px-24">
 					<SectionTitle title="Intrebari frecvente" />
 					<div className="w-full px-0 md:px-4 lg:px-32">

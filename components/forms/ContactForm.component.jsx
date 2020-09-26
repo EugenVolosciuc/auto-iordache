@@ -19,7 +19,7 @@ const ContactForm = ({ showHeading = true }) => {
             alert.success('Multumim, va vom contacta in curand')
             reset(data)
         } catch (error) {
-            alert.error('Transmiterea a esuat')
+            alert.error(<>Nu stim de ce, dar transmiterea a esuat. Va rugam sa ne contactati la numarul <a href="tel:0743339536">074 333 9536</a>.</>)
             console.log(error)
         }
     }

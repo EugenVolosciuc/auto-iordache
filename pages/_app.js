@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps, router }) {
 		<Head>
 			<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
 		</Head>
-		<AlertProvider template={AlertTemplate} timeout={3000}>
+		<AlertProvider template={AlertTemplate} timeout={5000}>
 			<motion.div
 				key={router.route}
 				initial="pageInitial"

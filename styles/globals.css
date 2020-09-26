@@ -19,13 +19,13 @@ a {
 
 .base-layout-children-container {
 	/* VH - header - footer */
-	min-height: calc(100vh - 68px - 56px - 2rem); 
+	min-height: calc(100vh - 68px - 56px - .8rem); 
 }
 
 @media (min-width: 1024px) {
 	.base-layout-children-container {
 		/* VH - header - footer */
-		min-height: calc(100vh - 84px - 56px - 2rem); 
+		min-height: calc(100vh - 84px - 56px - .8rem); 
 	}
 }
 

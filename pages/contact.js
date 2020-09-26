@@ -35,7 +35,7 @@ const Contact = () => {
 						<motion.div variants={itemVariants} className="md:mr-8">
 							<div className="text-center md:text-left">
 								<h3 className="text-2xl font-medium mb-1">Telefoneaza-ne</h3>
-								<p className="text-lg">076 000 1111</p>
+								<p className="text-lg"><a href="tel:0743339536"></a>074 333 9536</p>
 							</div>
 							<div className="mt-8 md:mt-4">
 								<h3 className="text-2xl font-medium mb-2 text-center md:text-left">Trimite-ne un mesaj</h3>

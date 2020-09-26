@@ -57,7 +57,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='flex justify-between py-4 lg:py-6 px-4 md:px-24 w-full bg-main'>
+        <nav className='flex justify-between items-center py-4 lg:py-6 px-4 md:px-24 w-full bg-main'>
             <div className="logo-container">
                 <Link href="/"><img src="/assets/images/logo_auto_iordache_white.png" alt="Logo Auto Iordache" className="w-full cursor-pointer"/></Link>
             </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
                         initial={showMenu ? 'show' : 'hidden'}
                         animate={showMenu ? 'show' : 'hidden'}
                         className="mt-6 px-8 pt-4 pb-6 flex flex-col absolute text-text-color bg-main rounded-bl-lg"
-                        style={{ right: -26, top: -2, ...showMenu ? {} : { display: 'none' } }}>
+                        style={{ right: -26, top: 0, ...showMenu ? {} : { display: 'none' } }}>
                         {getMenuItems("mb-6", true)}
                     </motion.ul>
                 </div>
