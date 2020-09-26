@@ -26,7 +26,7 @@ const BlogPost = ({ post }) => {
 
     return (
         <div>
-            <BaseLayout>
+            <BaseLayout title={`${post.title} | Auto Iordache`}>
                 <section className="py-8 px-4 md:px-24 bg-gray-200">
                     <div className="bg-white rounded-lg p-4 md:p-8">
                         {

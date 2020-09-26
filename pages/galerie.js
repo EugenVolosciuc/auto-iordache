@@ -8,7 +8,7 @@ const CarTitle = ({title}) => <h3 className="text-xl font-bold">{title}</h3>
 const Galerie = () => {
 	return (
 		<div>
-			<BaseLayout>
+			<BaseLayout title="Galerie | Auto Iordache">
 				<section className="mt-8 px-4 md:px-24">
 					<SectionTitle title="Categoria A" />
 					<div className="w-full flex">

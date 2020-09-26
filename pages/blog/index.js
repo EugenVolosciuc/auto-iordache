@@ -19,7 +19,7 @@ const Blog = ({ posts }) => {
 
     return (
         <div>
-            <BaseLayout>
+            <BaseLayout title="Blog | Auto Iordache">
                 <section className="mt-8 px-4 md:px-24">
                     <SectionTitle title="Blog" />
                 </section>

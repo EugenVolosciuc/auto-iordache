@@ -23,7 +23,7 @@ const itemVariants = {
 const Contact = () => {
 	return (
 		<div>
-			<BaseLayout>
+			<BaseLayout title="Contact | Auto Iordache">
 				<section className="mt-8 px-4 md:px-24 h-full">
 					<h1 className="text-center text-3xl font-black mt-4 md:mt-0">Hai sa facem cunostinta!</h1>
 					<p className="text-xl text-center mt-2">Alatura-te soferilor orasului Iasi</p>
