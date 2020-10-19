@@ -88,19 +88,19 @@ const Acasa = ({ posts }) => {
                         <div className="resources-documents-card mr-4 bg-white rounded-lg p-4 w-full sm:w-1/2 md:w-full xl:fw-1/2 mb-4 sm:mb-0 md:mb-4 xl:mb-0">
                             <h4 className="text-2xl font-medium">Pentru scoala:</h4>
                             <ul className="mt-2">
-                                <li className="mb-1">Carte de identitate</li>
-                                <li className="mb-1">O fotografie de tip permis auto</li>
+                                <li className="mb-1">Copie carte de identitate</li>
                                 <li className="mb-1">Cerere scolarizare (completata la scoala)</li>
-                                <li className="mb-1">Avizul psihologic</li>
-                                <li className="mb-1">Avizul medical</li>
+                                <li className="mb-1">Aviz psihologic</li>
+                                <li className="mb-1">Fisa medicala</li>
                                 <li className="mb-1">Certificat de cazier judiciar</li>
                             </ul>
                         </div>
                         <div className="resources-documents-card mr-0 md:mr-4 bg-white rounded-lg p-4 w-full sm:w-1/2 md:w-full xl:fw-1/2">
                             <h4 className="text-2xl font-medium">Pentru examen:</h4>
                             <ul className="mt-2">
+                                <li className="mb-1">Copie carte de identitate</li>
                                 <li className="mb-1">Fisa de scolarizare</li>
-                                <li className="mb-1">Cerere tip</li>
+                                <li className="mb-1">Cerere tip (completata la scoala)</li>
                                 <li className="mb-1">Chitanta de plata a contravalorii permisului de conducere</li>
                                 <li className="mb-1">Certificat de cazier judiciar</li>
                             </ul>

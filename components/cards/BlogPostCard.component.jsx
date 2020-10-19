@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { PulseOnTap } from '../ui'
 
-const maxTitleLength = 40
+const maxTitleLength = 50
 const maxParagraphLength = 120
 
 const BlogPostCard = ({ blogPost }) => {
