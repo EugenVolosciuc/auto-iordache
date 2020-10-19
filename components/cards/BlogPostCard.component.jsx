@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { PulseOnTap } from '../ui'
 
-const maxTitleLength = 30
+const maxTitleLength = 40
 const maxParagraphLength = 120
 
 const BlogPostCard = ({ blogPost }) => {
@@ -38,7 +38,7 @@ const BlogPostCard = ({ blogPost }) => {
                     
                     <div className="flex flex-col justify-center mt-4 md:mt-0 md:ml-8">
                         <div className="flex flex-col mb-4">
-                            <h5 className="text-4xl font-medium">
+                            <h5 className="text-2xl font-medium">
                                 {blogPost.title
                                     ? blogPost.title.$t.length > maxTitleLength
                                         ? blogPost.title.$t.slice(0, maxTitleLength - 1) + "…"
