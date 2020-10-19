@@ -158,7 +158,7 @@ const Acasa = ({ posts }) => {
                 </div>
             </section>
             {
-                !isNil(posts) &&
+                !isNil(posts.entry) &&
                 <section className="my-16 px-4 md:px-24">
                     <SectionTitle title="blog" />
                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
@@ -185,7 +185,11 @@ export async function getServerSideProps(context) {
     } catch (error) {
         console.log("ERROR!!!", error)
         return {
-            props: {}
+            props: {
+                posts: {
+                    entry: null
+                }
+            }
         }
     }
 }
