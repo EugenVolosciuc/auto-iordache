@@ -50,6 +50,7 @@ const Acasa = ({ posts }) => {
                     <motion.div initial="hidden" animate="show" variants={containerVariantsForStaggering} className="flex flex-col lg:w-1/2 justify-center items-center text-center md:text-left md:items-start text-white z-10 px-8 md:px-0 md:pl-20 lg:pl-48 mb-8 md:mb-0">
                         <motion.h3 variants={heroAreaTextVariants} className="text-4xl md:text-6xl font-black mb-4 tracking-wide">AUTO IORDACHE</motion.h3>
                         <motion.h4 variants={heroAreaTextVariants} className="text-2xl md:text-4xl font-thin uppercase tracking-wide">Soferi buni pe strazile Iasului din 1992</motion.h4>
+                        <motion.h4 variants={heroAreaTextVariants} className="text-2xl md:text-4xl font-thin uppercase tracking-wide"></motion.h4>
                     </motion.div>
                     <motion.div initial={{ x: 200 }} animate={{ x: 0 }} className="flex flex-col lg:w-1/2 justify-center items-center px-4 md:px-0">
                         <ContactForm />
@@ -57,7 +58,8 @@ const Acasa = ({ posts }) => {
                 </div>
             </section>
             <section className="mt-16 px-4 md:px-24">
-                <p className="text-center text-xl xl:px-64">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque temporibus exercitationem quidem at unde, in cum placeat ut consequatur omnis. Sit itaque veniam nisi, incidunt sapiente ullam, impedit neque repellat totam soluta praesentium provident eveniet. Voluptates quod maiores, repellat, labore ea officia, nobis necessitatibus iusto facilis iure unde aperiam possimus.</p>
+                <h3 className="text-center text-2xl font-bold mb-4">Alatura-te soferilor orasului Iasi</h3>
+                <p className="text-center text-xl xl:px-64">Auto Iordache este o echipa de profesionisti ce va va oferi intreg suportul necesar pentru a putea deveni un sofer bun si calificat pentru toata viata. Din 1992 depunem efort sa instruim cei mai buni soferi din orasul Iasi.</p>
             </section>
             <section className="mt-16 px-4 md:px-24">
                 <SectionTitle title="categorii" />
@@ -86,20 +88,20 @@ const Acasa = ({ posts }) => {
                         <div className="resources-documents-card mr-4 bg-white rounded-lg p-4 w-full sm:w-1/2 md:w-full xl:fw-1/2 mb-4 sm:mb-0 md:mb-4 xl:mb-0">
                             <h4 className="text-2xl font-medium">Pentru scoala:</h4>
                             <ul className="mt-2">
+                                <li className="mb-1">Carte de identitate</li>
+                                <li className="mb-1">O fotografie de tip permis auto</li>
                                 <li className="mb-1">Cerere scolarizare (completata la scoala)</li>
-                                <li className="mb-1">Copie act de identitate</li>
-                                <li className="mb-1">Fisa medicala</li>
                                 <li className="mb-1">Avizul psihologic</li>
+                                <li className="mb-1">Avizul medical</li>
                                 <li className="mb-1">Certificat de cazier judiciar</li>
                             </ul>
                         </div>
                         <div className="resources-documents-card mr-0 md:mr-4 bg-white rounded-lg p-4 w-full sm:w-1/2 md:w-full xl:fw-1/2">
                             <h4 className="text-2xl font-medium">Pentru examen:</h4>
                             <ul className="mt-2">
-                                <li className="mb-1">Cerere scolarizare (completata la scoala)</li>
-                                <li className="mb-1">Copie act de identitate</li>
-                                <li className="mb-1">Fisa medicala</li>
-                                <li className="mb-1">Avizul psihologic</li>
+                                <li className="mb-1">Fisa de scolarizare</li>
+                                <li className="mb-1">Cerere tip</li>
+                                <li className="mb-1">Chitanta de plata a contravalorii permisului de conducere</li>
                                 <li className="mb-1">Certificat de cazier judiciar</li>
                             </ul>
                         </div>
@@ -164,6 +166,9 @@ const Acasa = ({ posts }) => {
                     </div>
                 </section>
             }
+            <section className="mt-16 px-4 md:px-24 pb-8">
+                <p className="text-center text-xl xl:px-64"><Link href="/contact" as="/contact"><a className="font-bold text-main">Contacteaza-ne</a></Link> pentru a-ti asigura un loc la volan!</p>
+            </section>
         </BaseLayout>
     )
 }

@@ -26,7 +26,8 @@ const Contact = () => {
 			<BaseLayout title="Contact | Auto Iordache">
 				<section className="mt-8 px-4 md:px-24 h-full">
 					<h1 className="text-center text-3xl font-black mt-4 md:mt-0">Hai sa facem cunostinta!</h1>
-					<p className="text-xl text-center mt-2">Alatura-te soferilor orasului Iasi</p>
+					<p className="text-base md:text-xl text-center mt-3">Va multumim pentru interesul acordat serviciilor noastre. Mai jos aveti informatii complete pentru a intra in legatura cu noi.</p>
+					<p className="text-base md:text-xl text-center mt-3">Daca aveti intrebari despre serviciile noastre, va rugam nu ezitati sa ne contactati completand formularul de mai jos!</p>
 					<motion.div
 						variants={containerVariants}
 						initial="hidden"
@@ -52,7 +53,7 @@ const Contact = () => {
 							</div>
 						</motion.div>
 					</motion.div>
-					<h3 className="text-2xl font-medium text-center my-6 md:mt-8">
+					<h3 className="text-2xl font-medium text-center my-6 md:mt-8 pb-4">
 						Urmareste-ne pe
 						<PulseOnTap>
 							<a target="_blank" href="https://www.facebook.com/Scoala-Auto-Iordache-545829935899408/" rel="noopener">

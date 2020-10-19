@@ -2,37 +2,27 @@ const categories = [
     {
         letter: 'A',
         title: 'Motociclete',
-        subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea rem, reprehenderit optio ipsum ex officiis nam maxime explicabo eum non.',
-        imgSrc: '/assets/cars/vw_golf.jpg',
-        alt: 'VW Golf'
+        subtitle: 'Motociclete cu sau fara atas si tricicluri cu motor cu puterea de peste 15 kW',
     },
     {
         letter: 'B',
         title: 'Autoturisme',
-        subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur officia aperiam nobis, fugiat esse deleniti perspiciatis?',
-        imgSrc: '/assets/cars/vw_golf.jpg',
-        alt: 'VW Golf'
+        subtitle: 'Autovehicule a caror masa totala maxima autorizata nu depaseste 3.500 kg si al carui numar de locuri pe scaune, in afara conducatorului, nu este mai mare de 8',
     },
     {
         letter: 'C',
         title: 'Camioane',
-        subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et reiciendis temporibus unde consequuntur, maxime praesentium fugit voluptatibus autem repellendus, aliquam est reprehenderit consequatur dicta!',
-        imgSrc: '/assets/cars/vw_golf.jpg',
-        alt: 'VW Golf'
+        subtitle: 'Autovehicule a caror masa totala maxima autorizata este mai mare de 3.500 kg si care este proiectat si construit pentru transportul a maximum 8 pasageri in afara conducatorului auto',
     },
     {
         letter: 'D',
-        title: 'Autoturisme',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        imgSrc: '/assets/cars/vw_golf.jpg',
-        alt: 'VW Golf'
+        title: 'Autocar',
+        subtitle: 'Autovehicule destinate transportului de persoane avand mai mult de 8 locuri pe scaune, in afara locului conducatorului',
     },
     {
         letter: 'E',
-        title: 'Autoturisme',
-        subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, officia.',
-        imgSrc: '/assets/cars/vw_golf.jpg',
-        alt: 'VW Golf'
+        title: 'Remorca',
+        subtitle: 'Vehicule fara autopropulsie, trase de un vehicul motor si destinat transportului de persoane sau de marfuri',
     },
 ]
 

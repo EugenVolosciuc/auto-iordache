@@ -12,7 +12,7 @@ const PhotoGallery = ({ photos = [] }) => {
         <>
             <Gallery
                 photos={photos}
-                targetRowHeight={230}
+                // targetRowHeight={300}
                 onClick={(event, clickedImage) => {
                     setPhotoIndex(clickedImage.index)
                     setLightboxIsOpen(true)

@@ -26,7 +26,7 @@ const ContactForm = ({ showHeading = true }) => {
 
     return (
         <div className={`p-8 ${showHeading ? '' : 'pt-1'} bg-white z-10 rounded-lg w-full md:w-auto`}>
-            {showHeading && <h3 className="text-xl font-medium mx-auto" style={{ maxWidth: 320 }}>Lasă-ne datele de contact și revenim noi cu un apel</h3>}
+            {showHeading && <h3 className="text-xl font-medium mx-auto" style={{ maxWidth: 320 }}>Lasa-ne datele de contact si revenim noi cu un apel</h3>}
             <form
                 className="mx-auto"
                 onSubmit={handleSubmit(onSubmit)}
