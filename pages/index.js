@@ -137,7 +137,7 @@ const Acasa = ({ posts }) => {
                             </li>
                             <li className="mb-1">
                                 <ExternalResource
-                                    href="https://www.e-drpciv.ro/"
+                                    href="https://www.scoalarutiera.ro/"
                                     label="Chestionare auto"
                                 />
                             </li>
