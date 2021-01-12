@@ -48,7 +48,7 @@ const Acasa = ({ posts }) => {
                 <div className="flex flex-col md:flex-row w-full relative hero-area justify-center">
                     <div className="overlay z-0" />
                     <motion.div initial="hidden" animate="show" variants={containerVariantsForStaggering} className="flex flex-col lg:w-1/2 justify-center items-center text-center md:text-left md:items-start text-white z-10 px-8 md:px-0 md:pl-20 lg:pl-48 mb-8 md:mb-0">
-                        <motion.h3 variants={heroAreaTextVariants} className="text-4xl md:text-6xl font-black mb-4 tracking-wide">AUTO IORDACHE</motion.h3>
+                        <motion.h3 variants={heroAreaTextVariants} className="text-4xl md:text-6xl font-bold mb-4 tracking-wide">AUTO IORDACHE</motion.h3>
                         <motion.h4 variants={heroAreaTextVariants} className="text-2xl md:text-4xl font-thin uppercase tracking-wide">Soferi buni pe strazile Iasului din 1992</motion.h4>
                         <motion.h4 variants={heroAreaTextVariants} className="text-2xl md:text-4xl font-thin uppercase tracking-wide"></motion.h4>
                     </motion.div>
@@ -67,6 +67,7 @@ const Acasa = ({ posts }) => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {categories.map(category => (
                             <motion.div 
+                                className="flex h-full items-center mb-0 md:mb-4"
                                 ref={ref}
                                 animate={controls}
                                 initial="hidden"
